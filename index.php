@@ -1,0 +1,174 @@
+<?php
+// Akhil Thankachan - Portfolio
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Akhil Thankachan — Portfolio</title>
+    <meta name="description" content="Akhil Thankachan — PHP/JavaScript developer with 2.5 years experience." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Workspace/portfolio/portflio/assets/css/style.css" />
+    <link rel="icon" href="/Workspace/portfolio/portflio/assets/img/favicon.svg" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="logo">AT</span>
+                <a href="#" class="brand-name">Akhil Thankachan</a>
+            </div>
+            <nav class="site-nav" aria-label="Primary">
+                <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+                <ul id="navMenu" class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="blobs" aria-hidden="true">
+                <span class="blob blob-a"></span>
+                <span class="blob blob-b"></span>
+            </div>
+            <div class="container">
+                <h1>Hi, I'm Akhil Thankachan</h1>
+                <p class="subtitle"><span id="typedSubtitle" aria-label="Role">PHP/JavaScript Developer • 2.5 years experience</span></p>
+                <p class="tagline">I build reliable, performant web apps using PHP, JavaScript, MySQL, and modern frameworks.</p>
+                <div class="cta">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About</h2>
+                <p>
+                    Developer focused on clean architecture, RESTful integrations, and modern UI. Experience with
+                    CodeIgniter, basic Laravel, WordPress, and building responsive interfaces.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div>
+                        <h3>Programming & Scripting</h3>
+                        <ul>
+                            <li>PHP</li>
+                            <li>JavaScript</li>
+                            <li>SQL/MySQL</li>
+                            <li>AJAX</li>
+                            <li>jQuery</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Frameworks</h3>
+                        <ul>
+                            <li>CodeIgniter</li>
+                            <li>Laravel (Basic)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>WordPress Development</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>APIs & Integrations</h3>
+                        <ul>
+                            <li>REST APIs</li>
+                            <li>OpenAI API</li>
+                            <li>Gemini API</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Tools, IDEs & OS</h3>
+                        <ul>
+                            <li>Git</li>
+                            <li>VS Code</li>
+                            <li>AI Cursor</li>
+                            <li>Ubuntu 20.04</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Experience</h2>
+                <ul class="timeline">
+                    <li>
+                        <div class="time">2023 — Present</div>
+                        <div class="content">
+                            <h3>Web Developer</h3>
+                            <p>Delivered PHP/JS features, optimized MySQL queries, integrated REST APIs, and improved UI performance.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div id="projectGrid" class="project-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact</h2>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button class="btn primary" type="submit">Send</button>
+                    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <?php echo date('Y'); ?> Akhil Thankachan</p>
+        </div>
+    </footer>
+
+    <script src="/Workspace/portfolio/portflio/assets/js/main.js" defer></script>
+</body>
+</html>
+
+

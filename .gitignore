@@ -1,0 +1,25 @@
+# Ignore common PHP and system files
+vendor/
+composer.lock
+composer.phar
+
+# Ignore environment and log files
+.env
+.env.*
+*.log
+error_log
+
+# Ignore IDE/editor folders
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore cache/temp
+*.cache
+*.tmp
+cache/
