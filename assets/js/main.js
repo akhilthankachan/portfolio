@@ -107,29 +107,22 @@
   if (window.__initReveals) window.__initReveals();
 })();
 
-// Contact form submit to PHP endpoint
+// Contact form handling for static hosting (uses mailto)
 (function () {
   var form = document.getElementById('contactForm');
   var status = document.getElementById('formStatus');
   if (!form || !status) return;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    status.textContent = 'Sending...';
-    var data = new FormData(form);
-    fetch('/Workspace/portfolio/portflio/api/contact.php', {
-      method: 'POST',
-      body: data
-    }).then(function (res) { return res.json(); })
-      .then(function (json) {
-        if (json.success) {
-          status.textContent = 'Thanks! I will reply soon.';
-          form.reset();
-        } else {
-          status.textContent = json.message || 'Something went wrong.';
-        }
-      }).catch(function () {
-        status.textContent = 'Network error. Please try again.';
-      });
+    var name = (document.getElementById('name') || {}).value || '';
+    var email = (document.getElementById('email') || {}).value || '';
+    var message = (document.getElementById('message') || {}).value || '';
+    var subject = encodeURIComponent('Portfolio Contact from ' + name);
+    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+    // Replace with your email address
+    var to = 'mailto:youremail@example.com?subject=' + subject + '&body=' + body;
+    status.textContent = 'Opening your email client...';
+    window.location.href = to;
   });
 })();
 

@@ -1,6 +1,3 @@
-<?php
-// Akhil Thankachan - Portfolio
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Workspace/portfolio/portflio/assets/css/style.css" />
-    <link rel="icon" href="/Workspace/portfolio/portflio/assets/img/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.svg" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -163,11 +160,12 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>© <?php echo date('Y'); ?> Akhil Thankachan</p>
+            <p>© <span id="year"></span> Akhil Thankachan</p>
         </div>
     </footer>
 
-    <script src="/Workspace/portfolio/portflio/assets/js/main.js" defer></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
 
